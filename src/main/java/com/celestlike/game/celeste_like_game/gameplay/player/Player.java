@@ -2,32 +2,46 @@ package com.celestlike.game.celeste_like_game.gameplay.player;
 
 import com.celestlike.game.celeste_like_game.gameplay.combat.CombatStats;
 
-// Favor composition over inheritance: Player has components.
+// Favor composition: Player HAS combat stats & position data.
 public class Player {
 
     private final CombatStats combatStats;
 
-    public Player(CombatStats combatStats) {
+    private float x;
+    private float y;
+
+    public Player(CombatStats combatStats, float startX, float startY) {
         this.combatStats = combatStats;
+        this.x = startX;
+        this.y = startY;
     }
 
     public void move(float dx, float dy) {
-        // TODO: apply movement logic (separate from rendering)
+        this.x += dx;
+        this.y += dy;
     }
 
     public void jump() {
-        // TODO: jump logic
+        // TODO: later add vertical velocity / gravity
     }
 
     public void dash() {
-        // TODO: dash logic
+        // TODO: later add dash mechanic
     }
 
     public void attack() {
-        // delegate to combat / weapon system
+        // TODO: later connect to combat system
     }
 
     public CombatStats getCombatStats() {
         return combatStats;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
     }
 }

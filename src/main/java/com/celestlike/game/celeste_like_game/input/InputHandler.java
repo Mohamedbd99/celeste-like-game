@@ -1,7 +1,13 @@
 package com.celestlike.game.celeste_like_game.input;
 
-// Input is separated from gameplay logic.
-// You can later implement a Command pattern here.
+// Pure input abstraction: no game logic here.
 public interface InputHandler {
-    void pollInput();
+    boolean isLeftPressed();
+    boolean isRightPressed();
+    boolean isUpPressed();
+    boolean isDownPressed();
+    boolean isJumpPressed();
+    boolean isDashPressed();
+    boolean isAttackPressed();
+    boolean isDefensePressed();
 }
